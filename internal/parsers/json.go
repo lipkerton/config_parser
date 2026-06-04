@@ -1,0 +1,17 @@
+package parsers
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type JSONParser struct {}
+
+func (p *JSONParser) Parse(data []byte) (map[string]interface{}, error) {
+	var result map[string]interface{}
+
+	if err := json.Unmarshal(data, &result) {
+		return nil, fmt.Errorf("Ошибка парсинга JSON: %w", err)
+	}
+
+	return result, nil
+}

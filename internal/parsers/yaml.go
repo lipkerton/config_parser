@@ -1,5 +1,4 @@
 package parsers
-
 import (
 	"fmt"
 	"gopkg.in/yaml.v3"
