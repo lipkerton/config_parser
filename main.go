@@ -61,6 +61,9 @@ func main() {
 	cfgAnalyzer := analyzer.NewAnalyzer()
 	cfgAnalyzer.RegisterRule(&rules.DebugRule{})
 	cfgAnalyzer.RegisterRule(&rules.AlgoRule{})
+	cfgAnalyzer.RegisterRule(&rules.BindRule{})
+	cfgAnalyzer.RegisterRule(&rules.PasswordRule{})
+	cfgAnalyzer.RegisterRule(&rules.TLSRule{})
 
 	issues := cfgAnalyzer.Run(parsedConfig)
 
