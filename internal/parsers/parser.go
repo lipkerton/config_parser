@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func Parser interface {
+type Parser interface {
 	Parse(data []byte) (map[string]interface{}, error)
 }
 

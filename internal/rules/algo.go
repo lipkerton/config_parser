@@ -20,10 +20,10 @@ func (r *AlgoRule) Analyze(config map[string]interface{}) []models.Issue {
 						Severity: models.High,
 						RuleName: r.Name(),
 						Description: "Слишком слабый алгоритм хеширования - " + strVal + ".",
-						Recommendation: "Замените его на более безопасный."
+						Recommendation: "Замените его на более безопасный.",
 					})
 				}
-			} else if nextMap, ok := v.(map[string]interfaceP{}); ok {
+			} else if nextMap, ok := v.(map[string]interface{}); ok {
 				checkWeakAlgo(nextMap)
 			}
 		}
