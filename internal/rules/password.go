@@ -15,7 +15,7 @@ func (r *PasswordRule) Analyze(config map[string]interface{}) []models.Issue {
 	checkPasswords = func(cfg map[string]interface{}) {
 		for k, v := range cfg {
 			keyLower := strings.ToLower(k)
-			if strings.Contains("password") || strings.Contains("pass") || strings.Contains("secret") {
+			if strings.Contains(keyLower, "password") || strings.Contains(keyLower, "pass") || strings.Contains(keyLower, "secret") {
 				if strVal, ok := v.(string); ok && strVal != "" {
 					issues = append(issues, models.Issue{
 						Severity: models.High,

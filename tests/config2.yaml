@@ -1,0 +1,10 @@
+version: "1.0"
+server:
+  host: "0.0.0.0"
+  tls_check: disabled
+database:
+  db_password: "секрет"
+storage:
+  digest-algorithm: MD5
+log:
+  level: debug
